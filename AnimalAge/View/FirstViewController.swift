@@ -12,7 +12,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var pickerAnimalsSize: UIPickerView!
     
   
-    var selectedValue: String = ""
+    var selectedValue: String = "Medium"
     let firstViewModel = FirstViewModel()
     @IBOutlet weak var dateSelected: UIDatePicker!
     
@@ -24,6 +24,7 @@ class FirstViewController: UIViewController {
         pickerAnimalsSize.dataSource = self
         firstViewModel.delegate = self
         firstViewModel.sendSizesFromModel()
+        pickerAnimalsSize.selectRow(1, inComponent: 0, animated: false)
     }
 
     @IBAction func sendDataBtn(_ sender: UIButton) {
@@ -38,7 +39,6 @@ class FirstViewController: UIViewController {
             secondViewController.image = animalAtributesModel.image
             secondViewController.sizeSelected = animalAtributesModel.sizeSelected
             secondViewController.yearsHuman = animalAtributesModel.years
-            
         }
     }
     

@@ -26,7 +26,8 @@ class FirstViewModel {
         var yearsHuman = Double(years)
         var image = ""
         let sizeOfAnimal = AnimalSizeModel(rawValue: sizeSelected)
-        
+
+    
         switch sizeOfAnimal {
         case .small:
             yearsHuman *= 6
